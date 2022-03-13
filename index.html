@@ -36,15 +36,61 @@
 <body>
     <header>
         <nav>
-            <a href="#">
-                <img class="logo" src="./img/futura logo.png" alt="FuturaBrake logo">
-            </a>
+            <div class="logoContainer navButton">
+                <a href="#">
+                    <img class="logo" src="./img/futura logo.png" alt="FuturaBrake logo">
+                </a>
+                <a href="https://thebrakestore.ca/pages/shop">
+                    <img class="logo" src="./img/tbsLogo.jpg" alt="The Brake Store logo">
+                </a>
+            </div>
+            <div class="navButton">
+                <a href="#">About Us</a>
+            </div>
+            <div class="shopLinkContainer navButton">
+                <a class="shopLink" href="https://thebrakestore.ca/pages/shop">Shop</a>
+            </div>
+            <div class="navButton popularModelsButton">
+                <a href="#">Popular Models</a>
+            </div>
         </nav>
-        <div class="shopLinkContainer">
-            <a class="shopLink" href="https://thebrakestore.ca/pages/shop">Shop for Futura Brakes</a>
-        </div>
+        
     </header>
     <main>
+        <section class="sliderSection">
+            <div class="sliderContainer">
+                <div class="slide slideOne">
+                    <img src="img/slide1.jpg" alt="Futura Brake Pads and Steels Rotors">
+                    <div class="slideTextContainer">
+                        <h2>Shop for Brake Pads and Rotors</h2>
+                    </div>
+                </div>
+                <div hidden class="slide slideTwo">
+                    <img src="img/slide2.jpg" alt="Shelf of Futura Brake Pads">
+                    <div class="slideTextContainer">
+                        <h2>We Specialize in Commercial Grade Brake Pads</h2>
+                    </div>
+                </div>
+                <div hidden class="slide slideThree">
+                    <img src="img/slide3.jpg" alt="Anti-Rust Coated Rotor">
+                    <div class="slideTextContainer">
+                        <h2>Anti-Rust Coated Rotors Available</h2>
+                    </div>
+                </div>
+                <section class="sliderControls">
+                    <div class="sliderArrowContainer">
+                        <img class="sliderArrow sliderArrowLeft" src="img/leftArrow.png" alt="Left Arrow">
+                        <img class="sliderArrow Right" src="img/rightArrow.png" alt="Right Arrow">
+                    </div>
+                    <div class="slideButtonContainer">
+                        <div class="slideButton firstSlideButton"></div>
+                        <div class="slideButton secondSlideButton"></div>
+                        <div class="slideButton thirdSlideButton"></div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
         <section class="aboutBrakesSection">
             <h1>High Quality Brake Pads</h1>
             <div class="aboutBrakesContentContainer">
@@ -57,6 +103,11 @@
                 </div>
             </div>
         </section>
+
+        <!--
+
+            To be split into two more pages
+
         <section class="aboutUsSection">
             <h2>About Us</h2>
             <p>At Futura Brake, we provide our customers with premium brake pads for the most popular makes and models on the market. We have provided brakes to the Toronto and GTA area for taxi and limousine fleets for more than 20 years, and have thousands of satisfied customers across Canada.</p>
@@ -453,6 +504,7 @@
                 </section>
             </section>
         </section>
+        -->
     </main>
     <footer>
         <small>&#169; 2022 Futura Brake</small> 

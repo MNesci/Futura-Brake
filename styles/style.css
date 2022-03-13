@@ -107,39 +107,33 @@ Box Model
 Header Layout
 */
 
-body {
-    margin-top: 94px;
-}
-
 header {
-    position: fixed;
-    display: flex;
-    top: 0;
-    width: 100%;
-    height: 94px;
     padding: 5px;
 }
 
 nav {
-    width: 380px;
+    display: flex;
+    justify-content: space-around;
+    gap: 3%;
 }
 
-.logo {
-    height: 100%;
-}
-
-.shopLinkContainer {
+.navButton {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2px;
+}
+
+.logoContainer {
+    flex-direction: column;
+    width: 300px;
+}
+
+.logo {
     width: 100%;
 }
 
-.shopLink {
-    padding: 5px;
-    border: 5px solid black;
-    border-radius: 20%;
-}
+
 
 /*
 Main Layout
@@ -148,6 +142,108 @@ Main Layout
 main > section {
     padding: 20px 5%;
 
+}
+
+/*
+Slider Section Layout
+*/
+
+.sliderContainer {
+    position: relative;
+    width: 60%;
+    height: 0;
+    /* 2/3 * 60% width */
+    padding-bottom: 40%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    position: absolute;
+    width: 100%;
+}
+
+.slideTextContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slideTextContainer h2 {
+    max-width: 60%;
+    margin: 0;
+}
+
+.sliderControls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 40%;
+}
+
+.sliderArrowContainer {
+    padding-left: 1%;
+    padding-right: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sliderArrow {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.slideButtonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    padding-bottom: 5px;
+}
+
+.slideButton {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+/*
+Slider Section Style
+*/
+
+.sliderContainer {
+    color: white;
+}
+
+.slideTextContainer h2 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sliderArrow {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slideButton {
+    background-color: white;
+}
+
+.slideButton:hover {
+    background-color: gray;
 }
 
 /*
@@ -232,7 +328,7 @@ h1,
 h2,
 h3,
 p,
-.shopLink {
+.navButton {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -246,22 +342,26 @@ Header and Footer Style
 
 header,
 footer {
-    background-color: #d2d4db;
+    background-color: #e1e5e8;
 }
 
 header {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
 }
 
-.shopLink:hover {
-    box-shadow: 5px 8px 5px black;
-    background-color: #bbbfc9;
+nav a:hover {
+    background-color: #cdd2d7;
+    color: #2d2d2d;
 }
 
 /*
 Main Style
 */
+
+.sliderSection {
+    background-color: #f8fcff;
+}
 
 .aboutBrakesSection {
     background-color: #f4f4f6;
@@ -273,4 +373,21 @@ Main Style
 
 .commercialBrakesSection {
     background-color: #f4f4f6;
+}
+
+
+
+/*
+Media Queries
+*/
+
+
+/*
+Nav Break Point: collapse "Popular Models"
+*/
+@media screen and (max-width: 1105px) {
+
+    .popularModelsButton {
+        flex-basis: 0;
+    }
 }
