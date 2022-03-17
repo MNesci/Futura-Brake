@@ -441,7 +441,8 @@ About Brake Section Break Point: set p max-width
 @media screen and (min-width: 1400px) {
     p {
         max-width: 1200px;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
