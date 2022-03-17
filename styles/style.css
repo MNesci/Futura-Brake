@@ -108,12 +108,12 @@ Header Layout
 */
 
 header {
-    padding: 5px;
+    padding: 5px 5%;
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 3%;
 }
 
@@ -122,11 +122,6 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 2px;
-}
-
-.logoContainer {
-    flex-direction: column;
-    width: 300px;
 }
 
 .logo {
@@ -140,20 +135,33 @@ Main Layout
 */
 
 main > section {
-    padding: 20px 5%;
+    padding: 30px 5%;
 
+}
+
+
+/*
+Intro Section Layout
+*/
+
+.introSection {
+    display: flex;
 }
 
 /*
 Slider Section Layout
 */
 
+.sliderSection {
+    width: 60%;
+}
+
 .sliderContainer {
     position: relative;
-    width: 60%;
     height: 0;
-    /* 2/3 * 60% width */
-    padding-bottom: 40%;
+    /* 2/3 (wallet size pictures) = result 
+    if size of section containing this element changes, this changes*/
+    padding-bottom: 66.6666%;
 }
 
 .slide {
@@ -256,23 +264,46 @@ Slider Section Style
 }
 
 /*
-About Brakes Section Layout
+theBrakeStore Section Layout
 */
 
-.aboutBrakesContentContainer {
+.theBrakeStoreSection {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 40%;
+    padding-top: 5px;
+    padding-left: 2%;
 }
 
-.aboutBrakesTextContainer {
+
+/*
+About Brakes Section Layout
+
+No Layout styles needed
+*/
+
+
+/*
+About Us Section Layout
+*/
+
+.aboutUsContentContainer {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.aboutUsTextContainer {
     width: 60%;
 }
 
-.aboutBrakesImgContainer {
+.brakeBoxImgContainer {
     width: 40%;
 }
 
-.aboutBrakesImgContainer img {
+.brakeBoxImgContainer img {
     width: 100%;
 }
 
@@ -284,13 +315,16 @@ Commercial Brakes Section Layout
 .commercialBrakesContentContainer {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 2%;
     padding-bottom: 20px;
 }
 
-.commercialBrakesContentContainer p,
+.commercialBrakesContentContainer p {
+    width: 40%;
+}
+
 .commercialBrakesContentContainer img {
-    width: 50%;
+    width: 60%;
 }
 
 /*
@@ -324,9 +358,21 @@ Footer Layout
 
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    gap: 10px;
+    padding: 15px 5%;
+}
+
+.footerLogoContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer img {
+    width: 100%;
 }
 
 /*
@@ -355,11 +401,11 @@ footer {
 }
 
 header {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 3rem;
 }
 
 nav a:hover {
+    font-weight: 700;
     background-color: #cdd2d7;
     color: #2d2d2d;
 }
@@ -368,20 +414,18 @@ nav a:hover {
 Main Style
 */
 
-.sliderSection {
+.introSection,
+.aboutUsSection {
+    background-color: #f4f4f6;
+}
+
+.aboutBrakesSection,
+.commercialBrakesSection {
     background-color: #f8fcff;
 }
 
-.aboutBrakesSection {
-    background-color: #f4f4f6;
-}
-
-.aboutUsSection {
-    background-color: #bbbfc9;
-}
-
-.commercialBrakesSection {
-    background-color: #f4f4f6;
+.popularModelsSection {
+    background-color: white;
 }
 
 
@@ -392,11 +436,62 @@ Media Queries
 
 
 /*
+About Brake Section Break Point: set p max-width
+*/
+@media screen and (min-width: 1400px) {
+    p {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
+
+
+/*
 Nav Break Point: collapse "Popular Models"
 */
 @media screen and (max-width: 1105px) {
 
     .popularModelsButton {
         flex-basis: 0;
+    }
+}
+
+
+
+/*
+Header Break Point: reduce sizes of nav logo below 740px
+*/
+
+@media screen and (min-width: 740px) {
+    .navLogoContainer {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 739px) {
+    .navLogoContainer {
+        width: 200px;
+    }
+}
+
+
+/*
+Header Break Point: hamburger nav below 618px
+*/
+
+
+/*
+Footer Break Point: increase size of logos below 600px
+*/
+@media screen and (min-width: 600px) {
+    footer a {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    footer a {
+        width: 40%;
     }
 }
