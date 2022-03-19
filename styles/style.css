@@ -84,7 +84,8 @@ h3 {
 
 p {
     font-size: 1.6rem;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 a {
@@ -100,7 +101,6 @@ Box Model
     box-sizing: border-box;
 }
 
-
 /*ALL VIEWPORTS*/
 
 /*
@@ -108,37 +108,175 @@ Header Layout
 */
 
 header {
-    padding: 5px 5%;
-}
-
-nav {
     display: flex;
     justify-content: space-between;
-    gap: 3%;
-}
-
-.navButton {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 2px;
 }
 
-.logo {
+.hamburgerIconContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30px;
+}
+
+.hamburgerIconContainer img {
     width: 100%;
 }
 
+nav {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
 
+.navLogoContainer,
+.headerContactInfo {
+    flex-shrink: 0;
+}
+
+.headerText {
+    padding: 2px 2%;
+}
+
+.navLogoContainer {
+    width: 200px;
+}
+
+nav img {
+    width: 100%;
+}
+
+.headerContactInfo {
+    display: flex;
+    padding: 0;
+}
+
+/*
+Header Break Point: stack contact info below 1045px. column contact info below 
+*/
+
+@media screen and (min-width: 1045px) {
+
+    header {
+        padding: 5px 5%;
+        gap: 2%;
+    }
+
+    .headerContactInfo {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 1044px) {
+
+    header {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav,
+    .headerContactInfo {
+        padding: 5px 5%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .headerContactInfo {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1044px) and (min-width: 450px) {
+
+    .headerContactInfo {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .headerContactInfo {
+        flex-direction: column;
+        gap: 7px;
+    }
+}
+
+/*
+Header Break Point: Hamburger Nav below 750px
+*/
+
+@media screen and (min-width: 750px) {
+
+    .hamburgerIconContainer {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 749px) {
+
+    body {
+        margin-top: 80px;
+    }
+
+    header {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hideNavLink {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/*
+Header Break Point: increase body margin when header becomes fixed and when contact info column
+*/
+
+@media screen and (max-width: 749px) and (min-width: 450px) {
+
+    body {
+        margin-top: 94px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    body {
+        margin-top: 121px;
+    }
+}
 
 /*
 Main Layout
 */
 
 main > section {
-    padding: 30px 5%;
-
+    padding: 20px 5%;
 }
 
+/*
+Main Section Break Point: set p max-width
+*/
+@media screen and (min-width: 1400px) {
+    p {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
 /*
 Intro Section Layout
@@ -146,6 +284,64 @@ Intro Section Layout
 
 .introSection {
     display: flex;
+    padding: 20px 1%;
+}
+
+/*
+Intro Section Break Point: stack below 1001px
+*/
+
+@media screen and (min-width: 1001px) {
+
+    .sliderSection {
+        width: 55%;
+    }
+
+    .theBrakeStoreSection {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .introSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 400px) {
+
+    .sliderSection {
+        width: 80%;
+    }  
+    
+    .theBrakeStoreSection {
+        width: 80%;
+    }
+}
+
+/*
+Intro Break Point: reduce padding below 400px
+*/
+
+@media screen and (max-width: 400px) {
+
+    .sliderSection,
+    .theBrakeStoreSection {
+        width: 100%;
+    }
+
+    .sliderSection {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .theBrakeStoreSection {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
 
 /*
@@ -231,6 +427,18 @@ Slider Section Layout
 }
 
 /*
+Slider Break Point: hide below 300px
+*/
+
+@media screen and (max-width: 299px) {
+
+    .sliderSection {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/*
 Slider Section Style
 */
 
@@ -272,18 +480,33 @@ theBrakeStore Section Layout
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    padding-top: 5px;
-    padding-left: 2%;
+    padding: 5px 2%;
+    text-align: center;
 }
 
+.theBrakeStoreLogoContainer img {
+    width: 100%;
+}
+
+.shopButton {
+    padding: 10px 20px;
+}
+
+/*
+TBS Section Break Point: Increase Logo proportion below 400px
+*/
+
+@media screen and (max-width: 399px) {
+
+    .theBrakeStoreLogoContainer {
+        width: 100%;
+    }
+}
 
 /*
 About Brakes Section Layout
-
-No Layout styles needed
+No Layout styles needed. Media query for p in main
 */
-
 
 /*
 About Us Section Layout
@@ -295,18 +518,35 @@ About Us Section Layout
     gap: 2%;
 }
 
-.aboutUsTextContainer {
-    width: 60%;
-}
-
-.brakeBoxImgContainer {
-    width: 40%;
-}
-
 .brakeBoxImgContainer img {
     width: 100%;
 }
 
+/*
+About Us Section Break Point: stack img below 800px and increase size
+*/
+
+@media screen and (min-width: 800px) {
+
+    .aboutUsTextContainer {
+        width: 60%;
+    }
+    
+    .brakeBoxImgContainer {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 799px) {
+
+    .aboutUsContentContainer {
+        flex-direction: column;
+    }
+
+    .brakeBoxImgContainer {
+        width: 70%;
+    }
+}
 
 /*
 Commercial Brakes Section Layout
@@ -319,20 +559,50 @@ Commercial Brakes Section Layout
     padding-bottom: 20px;
 }
 
-.commercialBrakesContentContainer p {
-    width: 40%;
+/*
+Commercial Brakes Section Break Point: stack img below 1200px and increase size
+*/
+
+@media screen and (min-width: 1200px) {
+
+    .commercialBrakesContentContainer p {
+        width: 40%;
+    }
+    
+    .commercialBrakesContentContainer img {
+        width: 60%;
+    }
 }
 
-.commercialBrakesContentContainer img {
-    width: 60%;
+@media screen and (max-width: 1199px) {
+
+    .commercialBrakesContentContainer {
+        flex-direction: column;
+    }
+
+    .commercialBrakesContentContainer img {
+        width: 100%;
+    }
 }
 
 /*
-Model Display Layout
+Popular Models Layout
 */
 
+.popularModelsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.popularModelsDisplay {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .individualModelDisplay {
-    padding-top: 10px;
+    padding: 1% 1% 0 1%;
 }
 
 .individualModelDisplay h3 {
@@ -351,6 +621,23 @@ Model Display Layout
     width: 50%;
 }
 
+/*
+Popular Models Break Point: increase individual display size below 500px
+*/
+
+@media screen and (min-width: 500px) {
+
+    .individualModelDisplay {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 499px) {
+
+    .individualModelDisplay {
+        width: 100%;
+    }
+}
 
 /*
 Footer Layout
@@ -365,14 +652,121 @@ footer {
     padding: 15px 5%;
 }
 
-.footerLogoContainer {
+.footerAddressContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 3%;
+    width: 100%;
 }
 
-footer img {
+.contactInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.mapContainer {
+    position: relative;
+}
+
+.mapContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+}
+
+/*
+Footer Break Point: increase address and map proportions below 953px and again below 760px
+*/
+
+@media screen and (min-width: 953px) {
+
+    .mapContainer {
+        width: 25%;
+        /* 3/4 * 25% width = result (18.75%) */
+        padding-top: 18.75%;
+    }
+
+    .contactInfoContainer {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 952px) {
+
+    .mapContainer {
+        width: 35%;
+        /* 3/4 * 35% width = result (26.25%) */
+        padding-top: 26.25%;
+    }
+
+    .contactInfoContainer {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 759px) {
+
+    .mapContainer {
+        width: 40%;
+        /* 3/4 * 35% width = result (30%) */
+        padding-top: 30%;
+    }
+
+    .contactInfoContainer {
+        width: 60%;
+    }
+}
+
+/*
+Footer Break Point: map stacks below 655px
+*/
+
+@media screen and (min-width: 656px) {
+
+    .footerAddressContainer {
+        gap: 3%;
+    }
+}
+
+@media screen and (max-width: 655px) {
+
+    .footerAddressContainer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mapContainer {
+        width: 50%;
+        /* 3/4 * 50% width = result (37.5%) */
+        padding-top: 37.5%;
+    }
+
+    .contactInfoContainer {
+        width: 80%;
+    }
+}
+
+/*
+Footer Break Point: increase address and map proportions again below 480px
+*/
+
+@media screen and (max-width: 480px) {
+
+    .mapContainer {
+        width: 100%;
+        /* 3/4 * 100% width = result (75%) */
+        padding-top: 75%;
+    }
+
+    .contactInfoContainer {
+        width: 100%;
+    }
 }
 
 /*
@@ -383,12 +777,16 @@ h1,
 h2,
 h3,
 p,
-.navButton {
+.headerText {
     font-family: 'Roboto', sans-serif;
 }
 
 p {
     font-size: 1.8rem;
+}
+
+a:hover {
+    color: darkred;
 }
 
 /*
@@ -397,17 +795,47 @@ Header and Footer Style
 
 header,
 footer {
-    background-color: #e1e5e8;
+    background-color: #dce1e4;
 }
 
 header {
-    font-size: 3rem;
+    border-bottom: 1px black solid;
 }
 
-nav a:hover {
-    font-weight: 700;
-    background-color: #cdd2d7;
-    color: #2d2d2d;
+.hamburgerIconContainer {
+    border: 2px solid black;
+}
+
+nav {
+    font-size: 2.5rem;
+}
+
+.headerContactInfo {
+    font-size: 2rem;
+}
+
+/*
+Header Break Point: contact info stacks and colors change
+*/
+
+@media screen and (max-width: 1044px) {
+
+    .headerContactInfo {
+        background-color: darkred;
+        color: #e8ebed;
+    }
+}
+
+footer {
+    border-top: 1px black solid;
+}
+
+.contactInfoContainer {
+    font-size: 2rem;
+}
+
+.mapContainer {
+    border: 1px solid black;
 }
 
 /*
@@ -415,84 +843,23 @@ Main Style
 */
 
 .introSection,
-.aboutUsSection {
+.aboutUsSection,
+.popularModelsSection {
     background-color: #f4f4f6;
+}
+
+.shopButton {
+    border: 2px solid black;
+    background-color: #dce1e4;
+    font-size: 2rem;
 }
 
 .aboutBrakesSection,
 .commercialBrakesSection {
-    background-color: #f8fcff;
+    background-color: #e8ebed;
 }
 
-.popularModelsSection {
+.individualModelDisplay {
+    border: 1px black solid;
     background-color: white;
-}
-
-
-
-/*
-Media Queries
-*/
-
-
-/*
-About Brake Section Break Point: set p max-width
-*/
-@media screen and (min-width: 1400px) {
-    p {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-
-
-/*
-Nav Break Point: collapse "Popular Models"
-*/
-@media screen and (max-width: 1105px) {
-
-    .popularModelsButton {
-        flex-basis: 0;
-    }
-}
-
-
-
-/*
-Header Break Point: reduce sizes of nav logo below 740px
-*/
-
-@media screen and (min-width: 740px) {
-    .navLogoContainer {
-        width: 300px;
-    }
-}
-
-@media screen and (max-width: 739px) {
-    .navLogoContainer {
-        width: 200px;
-    }
-}
-
-
-/*
-Header Break Point: hamburger nav below 618px
-*/
-
-
-/*
-Footer Break Point: increase size of logos below 600px
-*/
-@media screen and (min-width: 600px) {
-    footer a {
-        width: 30%;
-    }
-}
-
-@media screen and (max-width: 599px) {
-    footer a {
-        width: 40%;
-    }
 }

@@ -97,5 +97,3 @@ buttonArray.forEach(function(button) {
         intervalId = setInterval(showNextSlide, 5000);
     });
 });
-
-// interval clear and reset on buttons doesn't work the second time a button is clicked

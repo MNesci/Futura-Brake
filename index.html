@@ -35,22 +35,21 @@
 </head>
 <body>
     <header>
+        <div class="hamburgerIconContainer">
+            <img src="./img/hamburgerIcon.svg" alt="Hamburger Navigation Menu Icon">
+        </div>
         <nav>
-            <div class="navLogoContainer navButton">
-                <a href="./index.html">
-                    <img class="logo" src="./img/futura logo.png" alt="FuturaBrake logo">
-                </a>
-            </div>
-            <div class="navButton">
-                <a href="./aboutUs.html">About Us</a>
-            </div>
-            <div class="shopLinkContainer navButton">
-                <a class="shopLink" href="https://thebrakestore.ca/pages/shop">Shop</a>
-            </div>
-            <div class="navButton popularModelsButton">
-                <a href="./popularModels.html">Popular Models</a>
-            </div>
+            <a class="navLogoContainer navButton" href="./index.html">
+                <img src="./img/futura logo.png" alt="FuturaBrake logo">
+            </a>
+            <a class="headerText hideNavLink" href="./aboutUs.html">About Us</a>
+            <a class="headerText hideNavLink" href="https://thebrakestore.ca/pages/shop">Shop</a>
+            <a class="headerText hideNavLink" href="./popularModels.html">Popular Models</a>
         </nav>
+        <address class="headerContactInfo headerText">
+            <span>(647) 949-7237</span>
+            <span>30 Intermodal Drive Unit 38</span>
+        </address>
     </header>
     <main>
         <section class="introSection">
@@ -92,7 +91,8 @@
                 <a href="https://thebrakestore.ca/pages/shop">
                     <img class="logo" src="./img/tbsLogo.png" alt="The Brake Store logo">
                 </a>
-                <p>Shop for Futura Brakes at our exclusive distributor, The Brake Store. Pick up is available at The Brake Store's conveniently located Brampton warehouse. Free expedited shipping is also available for sets of brake pads and rotors.</p>
+                <p>Futura Brakes are exclusively available at our retail outlet, The Brake Store. Pick up is available at our conveniently located Brampton warehouse by the 407 and Airport Road. Free expedited shipping is also available for sets of brake pads and rotors.</p>
+                <a class="shopButton" href="https://thebrakestore.ca/pages/shop">Shop Now</a>
             </section>
         </section>
         <section class="aboutBrakesSection">
@@ -104,16 +104,20 @@
         </section>
     </main>
     <footer>
-        <div class="footerLogoContainer">
-            <a href="./index.html">
-                <img class="logo" src="./img/futura logo.png" alt="FuturaBrake logo">
-            </a>
-            <a href="https://thebrakestore.ca/pages/shop">
-                <img class="logo" src="./img/tbsLogo.png" alt="The Brake Store logo">
-            </a>
-        </div>
+        <section class="footerAddressContainer">
+            <address class="contactInfoContainer">
+                <span>Address: 30 Intermodal Drive Unit 38, Brampton, Ontario</span>
+                <span>Phone: (647) 949-7237</span>
+                <span>Retail Hours: Mon - Fri 9:00 am - 5:00 pm</span>
+                <a href="mailto:sales@thebrakestore.ca">Email: sales@thebrakestore.ca</a>
+            </address>
+            <div class="mapContainer">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.908666326726!2d-79.67950928480202!3d43.73322417911866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3c4331918265%3A0xe0bb2cffc53e787!2sThe%20Brake%20Store!5e0!3m2!1sen!2sca!4v1647539859885!5m2!1sen!2sca" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
         <small>&#169; 2022 Futura Brake</small> 
     </footer>
-    <script src=script.js></script>
+    <script src="hamburger.js"></script>
+    <script src="slider.js"></script>
 </body>
 </html>
