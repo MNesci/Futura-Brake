@@ -311,7 +311,7 @@ Intro Section Break Point: stack below 1001px
     }
 }
 
-@media screen and (max-width: 1000px) and (min-width: 400px) {
+@media screen and (max-width: 1000px) and (min-width: 500px) {
 
     .sliderSection {
         width: 80%;
@@ -323,10 +323,10 @@ Intro Section Break Point: stack below 1001px
 }
 
 /*
-Intro Break Point: reduce padding below 400px
+Intro Break Point: reduce padding below 500px
 */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 499px) {
 
     .sliderSection,
     .theBrakeStoreSection {
@@ -347,10 +347,6 @@ Intro Break Point: reduce padding below 400px
 /*
 Slider Section Layout
 */
-
-.sliderSection {
-    width: 60%;
-}
 
 .sliderContainer {
     position: relative;
@@ -430,7 +426,7 @@ Slider Section Layout
 Slider Break Point: hide below 300px
 */
 
-@media screen and (max-width: 299px) {
+@media screen and (max-width: 359px) {
 
     .sliderSection {
         visibility: hidden;
@@ -438,37 +434,40 @@ Slider Break Point: hide below 300px
     }
 }
 
-/*
-Slider Section Style
-*/
+@media screen and (min-width: 360px) {
 
-.sliderContainer {
-    color: white;
-}
+    /*
+    Slider Section Style
+    */
 
-.slideTextContainer h2 {
-    background-color: rgba(0, 0, 0, 0.5);
-}
+    .sliderContainer {
+        color: white;
+    }
 
-.sliderArrow {
-    background-color: rgba(0, 0, 0, 0.5);
-}
+    .slideTextContainer h2 {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
-.slideButton {
-    background-color: white;
-}
+    .sliderArrow {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
-.slideButton:hover {
-    background-color: gray;
-}
+    .slideButton {
+        background-color: white;
+    }
 
-.slide {
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-}
+    .slideButton:hover {
+        background-color: gray;
+    }
 
-.hideSlide {
-    opacity: 0;
+    .slide {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .hideSlide {
+        opacity: 0;
+    }
 }
 
 /*
