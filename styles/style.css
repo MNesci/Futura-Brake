@@ -314,7 +314,7 @@ Intro Section Break Point: stack below 1001px
 @media screen and (max-width: 1000px) and (min-width: 500px) {
 
     .sliderSection {
-        width: 80%;
+        width: 90%;
     }  
     
     .theBrakeStoreSection {
