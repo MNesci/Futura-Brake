@@ -274,14 +274,15 @@ Intro Section Layout
 
 .introSection {
     display: flex;
-    padding: 20px 1%;
+    align-items: center;
+    gap: 20px;
 }
 
 /*
-Intro Section Break Point: stack below 1001px
+Intro Section Break Point: stack below 1140px
 */
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 1140px) {
 
     .sliderSection {
         width: 45%;
@@ -292,16 +293,14 @@ Intro Section Break Point: stack below 1001px
     }
 }
 
-@media screen and (max-width: 1239px) {
+@media screen and (max-width: 1139px) {
 
     .introSection {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
     }
 }
 
-@media screen and (max-width: 1239px) and (min-width: 500px) {
+@media screen and (max-width: 1139px) and (min-width: 500px) {
 
     .sliderSection {
         width: 80%;
@@ -469,7 +468,8 @@ theBrakeStore Section Layout
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 5px 2%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .theBrakeStoreSection h1 span {
@@ -483,17 +483,14 @@ theBrakeStore Section Layout
 }
 
 /*
-theBrakeStore Section Break Point: reduce p width, and add padding above 1240px
+theBrakeStore Section Break Point: reduce p width, and add padding above 1140px
 */
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 1140px) {
 
-    .theBrakeStoreSection {
-        padding-left: 8%;
-    }
     
     .theBrakeStoreSection p {
-        max-width: 70%;
+        max-width: 700px;
     }
 }
 
@@ -532,12 +529,18 @@ About Us Section Break Point: stack img below 800px and increase size
 
 @media screen and (min-width: 800px) {
 
+    .aboutUsContentContainer {
+        justify-content: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+
     .aboutUsTextContainer {
-        width: 60%;
+        width: 50%;
     }
     
     .brakeBoxImgContainer {
-        width: 40%;
+        width: 50%;
     }
 }
 
@@ -568,6 +571,11 @@ Commercial Brakes Section Break Point: stack img below 1200px and increase size
 */
 
 @media screen and (min-width: 1200px) {
+
+    .commercialBrakesContentContainer {
+        max-width: 1200px;
+        margin: auto;
+    }
 
     .commercialBrakesContentContainer p {
         width: 40%;
@@ -600,9 +608,16 @@ Popular Models Layout
     gap: 20px;
 }
 
+.popularModelsSection p {
+    max-width: 1200px;
+    margin: auto;
+}
+
 .popularModelsDisplay {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .individualModelDisplay {
@@ -658,10 +673,9 @@ footer {
 
 .footerAddressContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 3%;
     width: 100%;
+    max-width: 1200px;
 }
 
 .contactInfoContainer {
@@ -691,9 +705,9 @@ Footer Break Point: increase address and map proportions below 953px and again b
 @media screen and (min-width: 953px) {
 
     .mapContainer {
-        width: 25%;
-        /* 3/4 * 25% width = result (18.75%) */
-        padding-top: 18.75%;
+        width: 50%;
+        /* 3/4 * 50% width = result (37.5%), but it is intentionally shorter */
+        padding-top: 25%;
     }
 
     .contactInfoContainer {
@@ -704,9 +718,9 @@ Footer Break Point: increase address and map proportions below 953px and again b
 @media screen and (max-width: 952px) {
 
     .mapContainer {
-        width: 35%;
-        /* 3/4 * 35% width = result (26.25%) */
-        padding-top: 26.25%;
+        width: 50%;
+        /* 3/4 * 50% width = result (37.5%), but it is intentionally shorter */
+        padding-top: 30%;
     }
 
     .contactInfoContainer {
@@ -717,28 +731,29 @@ Footer Break Point: increase address and map proportions below 953px and again b
 @media screen and (max-width: 759px) {
 
     .mapContainer {
-        width: 40%;
-        /* 3/4 * 35% width = result (30%) */
-        padding-top: 30%;
+        width: 50%;
+        /* 3/4 * 50% width = result (37.5%) */
+        padding-top: 37.5%;
     }
 
     .contactInfoContainer {
-        width: 60%;
+        width: 50%;
     }
 }
 
 /*
-Footer Break Point: map stacks below 655px
+Footer Break Point: map stacks below 720px
 */
 
-@media screen and (min-width: 656px) {
+@media screen and (min-width: 720px) {
 
     .footerAddressContainer {
+        justify-content: space-between;
         gap: 3%;
     }
 }
 
-@media screen and (max-width: 655px) {
+@media screen and (max-width: 720px) {
 
     .footerAddressContainer {
         flex-direction: column;
@@ -746,32 +761,16 @@ Footer Break Point: map stacks below 655px
     }
 
     .mapContainer {
-        width: 50%;
-        /* 3/4 * 50% width = result (37.5%) */
-        padding-top: 37.5%;
-    }
-
-    .contactInfoContainer {
-        width: 80%;
-    }
-}
-
-/*
-Footer Break Point: increase address and map proportions again below 480px
-*/
-
-@media screen and (max-width: 480px) {
-
-    .mapContainer {
         width: 100%;
-        /* 3/4 * 100% width = result (75%) */
-        padding-top: 75%;
+        /* 3/4 * 100% width = result (75%), but it is intentionally shorter */
+        padding-top: 40%;
     }
 
     .contactInfoContainer {
         width: 100%;
     }
 }
+
 
 /*
 Common Style
@@ -856,9 +855,13 @@ Main Style
 .shopButton {
     border: 2px solid black;
     border-radius: 10px;
-    background-color: darkred;
+    background-color: #8b0000;
     color: white;
     font-size: 2rem;
+}
+
+.shopButton:hover {
+    background-color: #b10000;
 }
 
 .aboutBrakesSection,
